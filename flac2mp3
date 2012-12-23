@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for f in *.flac
+do
+  echo "Processing " $f
+  ffmpeg -i "$f" -y -ab 320k -ac 2 -ar 48000 "${f%%.*}".mp3
+done
+echo "Done."
